@@ -48,8 +48,3 @@ int main(void) {
 
     return 0;
 }
-
-    printf("Hasil Kali matrix: \n");
-    print_matrix(C);
-    return 0;
-}
