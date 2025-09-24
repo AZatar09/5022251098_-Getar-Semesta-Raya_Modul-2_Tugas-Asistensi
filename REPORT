@@ -1,0 +1,5 @@
+1)fungsi read_matrix, parameter yang digunakan adalah int M[x][y], padahal variabel x dan y tidak pernah dideklarasikan. Hal ini menyebabkan error karena compiler tidak tahu ukuran matriks yang dimaksud. Perbaikan yang dilakukan adalah mengganti parameter menjadi int M[N][N] agar ukuran matriks sesuai dengan konstanta #define N 3.
+2)pada perulangan terdapat kesalahan penulisan pada bagian for (int j = 0; k < N; j++), di mana variabel yang digunakan untuk kondisi adalah k padahal yang seharusnya digunakan adalah j.
+3)Kesalahan berikutnya ada pada format input dan output. format specifier yang digunakan adalah %lf dan %c, padahal tipe data matriks yang dideklarasikan adalah int, sehingga format yang benar adalah %d.
+4) pada fungsi multiply, variabel sum dipakai tanpa deklarasi, sehingga perlu ditambahkan int sum = 0; di dalam perulangan agar tidak terjadi error.
+5)Pada bagian main, setelah pemanggilan read_matrix(B) tidak dituliskan titik koma (;), sehingga perlu ditambahkan agar kode bisa dikompilasi.
