@@ -1,19 +1,20 @@
-// Benarkan Code ini
+#include <stdio.h>
 
+#define N 3  // ukuran matrix
 
-
-#define N 3  // ini untuk deklarasi size matrix berapa (biar tetap seimbang saat perkalian matrix)
-
-void read_matrix(int M[x][y]) {
-    for (int i = 0; i < N; i++)
-        for (int j = 0; k < N; j++)
-            scanf("%lf", &M[i][j]);
+void read_matrix(int M[N][N]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            printf("Masukkan elemen [%d][%d]: ", i, j);
+            scanf("%d", &M[i][j]);  // gunakan %d karena M bertipe int
+        }
+    }
 }
 
 void multiply(int A[N][N], int B[N][N], int C[N][N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-            sum = 0;
+            int sum = 0;  // harus deklarasikan variabel sum
             for (int k = 0; k < N; k++) {
                 sum += A[i][k] * B[k][j];
             }
@@ -25,7 +26,7 @@ void multiply(int A[N][N], int B[N][N], int C[N][N]) {
 void print_matrix(int M[N][N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-            printf("%c ", M[i][j]);
+            printf("%d ", M[i][j]);  // gunakan %d karena M bertipe int
         }
         printf("\n");
     }
@@ -34,10 +35,19 @@ void print_matrix(int M[N][N]) {
 int main(void) {
     int A[N][N], B[N][N], C[N][N];
 
+    printf("Masukkan matriks A:\n");
     read_matrix(A);
-    read_matrix(B)
+
+    printf("Masukkan matriks B:\n");
+    read_matrix(B);
 
     multiply(A, B, C);
+
+    printf("Hasil Kali Matrix:\n");
+    print_matrix(C);
+
+    return 0;
+}
 
     printf("Hasil Kali matrix: \n");
     print_matrix(C);
